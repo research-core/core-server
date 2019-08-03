@@ -1,0 +1,24 @@
+[submodule "plugins/core-suppliers"]
+	path = plugins/core-suppliers
+	url = https://github.com/research-core/core-suppliers.git
+[submodule "plugins/core-finance"]
+	path = plugins/core-finance
+	url = https://github.com/research-core/core-finance.git
+[submodule "plugins/core-common"]
+	path = plugins/core-common
+	url = https://github.com/research-core/core-common.git
+[submodule "plugins/core-frontend"]
+	path = plugins/core-frontend
+	url = https://github.com/research-core/core-frontend.git
+[submodule "plugins/core-research"]
+	path = plugins/core-research
+	url = https://github.com/research-core/core-research.git
+[submodule "plugins/core-reimbursements"]
+	path = plugins/core-reimbursements
+	url = https://github.com/research-core/core-reimbursements.git
+[submodule "plugins/core-humanresources"]
+	path = plugins/core-humanresources
+	url = https://github.com/research-core/core-humanresources.git
+[submodule "libraries/pyforms-web"]
+	path = libraries/pyforms-web
+	url = https://github.com/UmSenhorQualquer/pyforms-web.git
