@@ -1,0 +1,10 @@
+
+\.idea/
+
+apps-cache/
+
+db\.sqlite3
+
+lockfile\.txt
+
+*.pyc

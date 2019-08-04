@@ -22,3 +22,18 @@
 [submodule "libraries/pyforms-web"]
 	path = libraries/pyforms-web
 	url = https://github.com/UmSenhorQualquer/pyforms-web.git
+[submodule "libraries/notifications-central"]
+	path = libraries/notifications-central
+	url = https://github.com/fchampalimaud/notifications-central.git
+[submodule "libraries/pyforms-custom-forms"]
+	path = libraries/pyforms-custom-forms
+	url = https://github.com/fchampalimaud/pyforms-custom-forms.git
+[submodule "plugins/core-orders"]
+	path = plugins/core-orders
+	url = https://github.com/research-core/core-orders.git
+[submodule "plugins/core-permissions"]
+	path = plugins/core-permissions
+	url = https://github.com/research-core/core-permissions.git
+[submodule "plugins/core-people"]
+	path = plugins/core-people
+	url = https://github.com/research-core/core-people.git

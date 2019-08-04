@@ -31,15 +31,39 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'common',
+    'people',
+    'permissions',
+    'finance',
+    'humanresources',
+    'research',
+    'orders',
+    'reimbursements',
+    'suppliers',
+    'notifications',
+    f'frontend',
+    'model_extra_fields',
+
+    'orquestra',
+    'pyforms_web.web',
+    'jfu',
+    'sorl.thumbnail',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites'
 ]
 
 MIDDLEWARE = [
+    'pyforms_web.web.middleware.PyFormsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -66,6 +90,11 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 WSGI_APPLICATION = 'core_settings.wsgi.application'
 
@@ -113,8 +142,41 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,'static', "img"),
+    os.path.join(BASE_DIR,'static', "css"),
+    #os.path.join(BASE_DIR,'static', "js"),
+)
+
+# ALL AUTH CONFIGURATION
+SITE_ID = 1 # Required for allauth module
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_SIGNUP_CLOSED = True
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_SESSION_REMEMBER = True
+
+PROFILE_GUEST = 'PROFILE: Guest'
+PROFILE_GROUP_RESPONSIBLE = 'PROFILE: Group responsible'
+PROFILE_LAB_MANAGER = 'PROFILE: Lab manager'
+PROFILE_ADMIN = 'PROFILE: Admin'
+PROFILE_HUMAN_RESOURCES = 'PROFILE: Human resources'
+PROFILE_EDIT_BUDGET = 'PROFILE: Edit budget'
+PROFILE_PUBLICATIONS_AUDITOR = 'PROFILE: Publications auditor'
+PROFILE_OSP = 'PROFILE: OSP collaborator'
+PROFILE_SCICOM = 'PROFILE: SCICOM'
+
+PROFILE_LAB_ADMIN = ''
+
+PROFILE_EXPIRING_CONTRACTS_OF_MY_GROUP = 'PROFILE: 60 Days warning: Expiring contracts of my groups'
+PROFILE_EXPIRING_CONTRACTS_AND_PAYOUTS = 'PROFILE: 60 Days warning: Expiring contracts and payouts'
+PROFILE_MAINTAINERS = 'PROFILE: Maintainers'
