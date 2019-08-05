@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'reimbursements',
     'suppliers',
     'notifications',
-    f'frontend',
+    'frontend',
     'model_extra_fields',
 
     'orquestra',
@@ -162,7 +162,7 @@ STATICFILES_DIRS = (
 SITE_ID = 1 # Required for allauth module
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_SIGNUP_CLOSED = True
-ACCOUNT_EMAIL_REQUIRED = True
+#ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_SESSION_REMEMBER = True
 
 PROFILE_GUEST = 'PROFILE: Guest'
@@ -178,6 +178,8 @@ PROFILE_SCICOM = 'PROFILE: SCICOM'
 PROFILE_LAB_ADMIN = ''
 APP_PROFILE_ORDERS = ''
 APP_PROFILE_ALL_ORDERS = ''
+
+APP_PROFILE_HR_PEOPLE = ''
 
 PROFILE_EXPIRING_CONTRACTS_OF_MY_GROUP = 'PROFILE: 60 Days warning: Expiring contracts of my groups'
 PROFILE_EXPIRING_CONTRACTS_AND_PAYOUTS = 'PROFILE: 60 Days warning: Expiring contracts and payouts'
