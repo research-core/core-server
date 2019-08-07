@@ -37,3 +37,6 @@
 [submodule "plugins/core-people"]
 	path = plugins/core-people
 	url = https://github.com/research-core/core-people.git
+[submodule "plugins/core-news"]
+	path = plugins/core-news
+	url = https://github.com/research-core/core-news.git
