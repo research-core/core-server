@@ -8,3 +8,7 @@ db\.sqlite3
 lockfile\.txt
 
 *.pyc
+
+media/
+
+*.py

@@ -31,18 +31,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #'news',
     'common',
     'people',
     'permissions',
-    #'finance',
-    #'humanresources',
-    #'research',
+    'research',
+    'finance',
+    'humanresources',
+    'suppliers',
     #'orders',
     #'reimbursements',
-    #'suppliers',
-    'notifications',
+    #'notifications',
     #'frontend',
-    'model_extra_fields',
+    #'model_extra_fields',
 
     'orquestra',
     'pyforms_web.web',
@@ -184,3 +185,13 @@ APP_PROFILE_HR_PEOPLE = ''
 PROFILE_EXPIRING_CONTRACTS_OF_MY_GROUP = 'PROFILE: 60 Days warning: Expiring contracts of my groups'
 PROFILE_EXPIRING_CONTRACTS_AND_PAYOUTS = 'PROFILE: 60 Days warning: Expiring contracts and payouts'
 PROFILE_MAINTAINERS = 'PROFILE: Maintainers'
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST 	  = 'smtp.gmail.com'
+EMAIL_PORT 	  = 587
+
+try:
+	exec( open( "passwords.py" ).read() )
+except:
+	pass
