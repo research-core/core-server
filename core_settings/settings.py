@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'suppliers',
     #'orders',
     #'reimbursements',
-    #'notifications',
+    'notifications',
     #'frontend',
     #'model_extra_fields',
 
