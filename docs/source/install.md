@@ -77,6 +77,17 @@ APP_PROFILE_HR_PEOPLE = ''
 PROFILE_EXPIRING_CONTRACTS_OF_MY_GROUP = 'PROFILE: 60 Days warning: Expiring contracts of my groups'
 PROFILE_EXPIRING_CONTRACTS_AND_PAYOUTS = 'PROFILE: 60 Days warning: Expiring contracts and payouts'
 PROFILE_MAINTAINERS = 'PROFILE: Maintainers'
+
+
+DEFAULT_CURRENCY_NAME = 'Euro'
+BASE_URL = 'http://localhost:8000'
+ENDING_CONTRACT_FROM = 'no.reply@example.com'
+ENDING_CONTRACT_WARNING_N_DAYS_BEFORE = 89
+
+# Because these configuration depend on the BASE_URL variable that can be diferent in production they have to be defined after the
+# production settings are loaded
+ENDING_CONTRACT_LINK        = '{base_url}/app/contracts/#/frontend.humanresources_apps.apps.Contract/?obj='.format(base_url=BASE_URL)
+NEW_CONTRACT_PROPOSAL_LINK  = '{base_url}/app/proposals/#/frontend.humanresources_apps.apps.Proposal/?obj={{proposal_id}}'.format(base_url=BASE_URL)
 ```
 
 Edit the core_server urls.py file with the next configurations:

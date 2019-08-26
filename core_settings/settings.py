@@ -190,6 +190,16 @@ EMAIL_USE_TLS = True
 EMAIL_HOST 	  = 'smtp.gmail.com'
 EMAIL_PORT 	  = 587
 
+DEFAULT_CURRENCY_NAME = 'Euro'
+BASE_URL = 'http://localhost:8000'
+ENDING_CONTRACT_FROM = 'no.reply@example.com'
+ENDING_CONTRACT_WARNING_N_DAYS_BEFORE = 89
+
+# Because these configuration depend on the BASE_URL variable that can be diferent in production they have to be defined after the
+# production settings are loaded
+ENDING_CONTRACT_LINK        = '{base_url}/app/contracts/#/frontend.humanresources_apps.apps.Contract/?obj='.format(base_url=BASE_URL)
+NEW_CONTRACT_PROPOSAL_LINK  = '{base_url}/app/proposals/#/frontend.humanresources_apps.apps.Proposal/?obj={{proposal_id}}'.format(base_url=BASE_URL)
+
 try:
 	exec( open( "passwords.py" ).read() )
 except:
