@@ -7,8 +7,8 @@ sudo apt install python-django-common
 sudo apt install libcairo2
 sudo apt install libpango1.0-0
 
-pip3 install core-common
-pip3 install core-humanresources
+sudo pip3 install core-common
+sudo pip3 install core-humanresources
 django-admin startproject core_server
 ```
 
@@ -108,4 +108,50 @@ urlpatterns = [
 if settings.DEBUG:
     from django.conf.urls.static import static
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+```
+
+Create the file local_settings.py file with the next configurations:
+
+```python
+SETTINGS_PRIORITY = 0
+ORQUESTRA_REQUIREAUTH = True
+PYFORMS_DEBUG = False
+```
+
+Create the static files folder.
+```shell script
+sudo mkdir /var/www/core-server/static
+sudo mkdir /var/www/core-server/static/js
+sudo mkdir /var/www/core-server/static/img
+sudo mkdir /var/www/core-server/static/css
+sudo python3 manage.py collectstatic
+```
+
+Create the file core.conf
+```shell script
+<VirtualHost *:80>
+    ServerName  core.example.com
+    ServerAlias core.example.com
+    ServerAdmin ricardo.ribeiro@research.fchampalimaud.org
+
+    ErrorLog  /var/log/core_error.log
+    CustomLog /var/log/core_access.log combined
+
+    WSGIDaemonProcess corehttp python-path=/usr/lib/python3.6/site-packages:/var/www/core-server
+    WSGIProcessGroup corehttp
+    WSGIScriptAlias / /var/www/core-server/configuration/wsgi.py
+    
+    Alias /static/ /var/www/core-server/static/
+
+    <Directory /var/www/research-core-server>
+        <Files wsgi.py>
+          Require all granted
+        </Files>
+    </Directory>
+
+    <Directory /var/www/research-core-server/static>
+        Require all granted
+    </Directory>
+   
+</VirtualHost>
 ```
