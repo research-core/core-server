@@ -8,6 +8,7 @@ sudo apt install libcairo2
 sudo apt install libpango1.0-0
 
 sudo pip3 install core-common
+sudo pip3 install core-permissions
 sudo pip3 install core-humanresources
 django-admin startproject core_server
 ```
