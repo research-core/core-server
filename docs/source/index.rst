@@ -10,6 +10,8 @@ Welcome to Research CORE's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   install
+
 
 
 Indices and tables
