@@ -1,7 +1,7 @@
 Install
 ---------
 
-.. code-block::
+.. code-block:: shell
 
     sudo apt install python3
     sudo apt install python3-django
@@ -126,7 +126,7 @@ Create the file local_settings.py file with the next configurations:
 
 Create the static files folder.
 
-.. code-block::
+.. code-block:: shell
 
     sudo mkdir /var/www/core-server/static
     sudo mkdir /var/www/core-server/static/js
@@ -136,7 +136,7 @@ Create the static files folder.
 
 Create the file core.conf
 
-.. code-block::
+.. code-block:: shell
 
     <VirtualHost *:80>
         ServerName  core.example.com
