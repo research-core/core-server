@@ -1,6 +1,14 @@
 Install
 ---------
 
+The documentation was tested on Amazon AWS t2.micro instance with Ubuntu 18.04 server installed.
+
+Install Python & the required libraries.
+_________________________________________________________
+
+
+As the first step you should make sure all that the next libraries are installed in the system.
+
 .. code-block:: shell
 
     sudo apt install python3
@@ -9,11 +17,24 @@ Install
     sudo apt install libcairo2
     sudo apt install libpango1.0-0
 
+After you should install the CORE modules from pypi.
+
+.. code-block:: shell
+
     sudo pip3 install core-common
     sudo pip3 install core-permissions
     sudo pip3 install core-humanresources
+
+Create the Django project
+__________________________
+
+Initialize the django project using the next command.
+
+.. code-block:: shell
+
     django-admin startproject core_server
 
+Configure the django project you just created with the next configurations:
 
 Edit the core_server settings.py file with the next configurations:
 
