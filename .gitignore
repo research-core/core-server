@@ -11,6 +11,6 @@ lockfile\.txt
 
 media/
 
-*.py
-
 docs/build/
+
+passwords.py
